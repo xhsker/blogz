@@ -1,30 +1,65 @@
 <!doctype html>
 <html>
+
     <head>
-        <title>Build a Blog</title>
+            <style>
+            .help{
+                color: darkblue;
+                font-family: Cambria;
+                font-style: italic;
+            }
+            </style>
+           
+        <title class="help1">Build a Blog</title>
+        
         <style>
             .error{
                 color: red;
+                font-style: italic;
+                font-family: Arial;
+                font-size: 25px;
             }
             </style>
+        <style>
+            .newposttitle{
+                color: dodgerblue;
+                font-style: italic;
+                font-family: Arial;
+                font-size: 20px;
+            }      
+        </style>
+        <style>
+            .newpostbody{
+                color: navy;
+                font-style: normal;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+            }
+        </style>    
     </head>
 <body>
+    <table stlye="border-spacing:20px;">
+            <tr>
+            <td></td><span><a style="color:limegreen; font-size: 18px" href="/blog"> Main Blog Page</a></span></td>
+            </tr>
+            <tr>    
+            <td></td><span><a style="color: magenta; font-size: 18px; margin-left: 50px;" href="/newpost">Add a New Blog Entry </a></span></td>
 
-    <div>
-        <a href="/blog">Blog Entries Page</a>
-        <a href="/new_entry">Add a Blog Entry</a>
-    </div>
+            </tr>   
+    </table>
+        
 
-    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% with messages = get_flashed_messages() %}
     <ul>
-        {% for category,message in messages %}
-            <li class="{{category}}">{{message}}</li>
-        {% endfor %}
+    {% for message in messages %}
+    <li class="error">{{message}}</li>
+    {% endfor %}
     </ul>
 
     {% endwith %}
 
-    {% block content %}
-    {% endblock %}
+{% block content %}
+{% endblock %}
+<footer style="color: steelblue; font-size: 10px; font-style: initial;">&#169 Thomas Lake</footer>
 </body>
 </html>

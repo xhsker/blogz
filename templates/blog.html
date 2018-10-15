@@ -2,19 +2,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-    <h1>Build Your Blog</h1>
+  
+    <h1 class="help">Build Your Blog</h1>
+   
     <hr/>
-    {% if blogs|length == 0 %}
-    <p> No Blog Entries have been made</p>
-    {% else %}
+    {% if blogs %}
         {% for blog in blogs %}
-        <div>
-            <a href="/blog?new_id={{blog.id}}"><h2>{{blog.title}}</h2></a>
-            <p>{{blog.body}}</p>
-        <hr />
-        </div>
-
+        
+            <p><a href="/blog?id={{blog.id}}" class="newposttitle">{{blog.title}}</a></p>    
+            </hr>  
+            <p class="newpostbody">{{ blog.body }}</p>
+        
+    <hr />
         {% endfor %}
+
     {% endif %}
 {% endblock %}
