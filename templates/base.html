@@ -2,43 +2,19 @@
 <html>
 
     <head>
-            <style>
-            .help{
-                color: darkblue;
-                font-family: Cambria;
-                font-style: italic;
-            }
-            </style>
-           
-        <title class="help">Build a Blog</title>
         
-        <style>
-            .error{
-                color: red;
-                font-style: italic;
-                font-family: Arial;
-                font-size: 25px;
-            }
-            </style>
-        <style>
-            .newposttitle{
-                color: dodgerblue;
-                font-style: italic;
-                font-family: Arial;
-                font-size: 20px;
-            }      
-        </style>
-        <style>
-            .newpostbody{
-                color: navy;
-                font-style: normal;
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 20px;
-            }
-        </style>    
+        <link rel="stylesheet" type= "text/css" href ="static/stylesheet.css"/>
+       
     </head>
+
+  
+    <title class="help">Build a Blog</title>
+            
 <body>
-    <table stlye="border-spacing:20px;">
+
+                
+    
+        <table stlye="border-spacing:20px;">
             <tr>
             <td></td><span><a style="color:limegreen; font-size: 18px" href="/blog"> Main Blog Page</a></span></td>
             </tr>
@@ -48,6 +24,7 @@
             </tr>   
     </table>
         
+    <img class="horse" src="static/images/Blog-image1.jpg" alt="Blog spelled in letters"/>
 
     {% with messages = get_flashed_messages() %}
     <ul>
@@ -59,7 +36,8 @@
     {% endwith %}
 
 {% block content %}
+
 {% endblock %}
-<footer style="color: steelblue; font-size: 10px; font-style: initial;">&#169 Thomas Lake</footer>
+<footer style="color: steelblue; font-size: 12px; font-style: initial;">&#169 Thomas Lake</footer>
 </body>
 </html>
