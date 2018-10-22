@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class='dog'>Login</h1>
+
+<p class='dog'>If you don't have an account, you may<a href="/register">register</a> here!</span></p>
+
+<form action="/login" method='POST'>
+
+    <label class='help'>Email</label>
+    <input  type='text' name='email' value='{{email}}'/>
+    <span class="error"></span>
+</br>
+    <label class='help'>Password</label>
+    <input  type='text' name='Password'/>
+    <span class='error'></span>
+</br>
+</br>
+    <input class ='help' type='submit' value='Login'/>
+
+
+</form>
+
+{% endblock %}

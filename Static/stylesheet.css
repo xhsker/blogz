@@ -2,21 +2,27 @@
 
 
 .horse {
-    display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 550px;
-    height: 450px;
+    width: 900px;
+    height: 8px;
     padding: 10px;
     border: 3px solid blue;
 text-align: center;
 }
-
+ 
+.dog {
+    color: greenyellow;
+    font-family: Cambria;
+    font-style: italic;
+    font-size: 18px;
+}
 
 .help{
     color: darkblue;
     font-family: Cambria;
     font-style: italic;
+    font-size: 18px;
 }
 
 .error{
@@ -39,6 +45,16 @@ text-align: center;
     font-style: normal;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
+}
+
+.label1{
+    color:darkred; 
+    font-size: 18px; 
+    display: block;
+}
+
+.submit1{
+    color: navy;
 }
 
 

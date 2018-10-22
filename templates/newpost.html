@@ -6,15 +6,15 @@
     <form action="/newpost" method='POST'>
 
 
-        <p><label style="color:darkred; font-size: 18px; display: block;">Title of your New Blog:</label>
+        <p><label class='label1'>Title of your New Blog:</label>
         <input class="newposttitle" type="text" name="title" value={{title}}></p>
         
         <br>
-        <p><label style="color:darkred; font-size: 18px; display: block;">Enter your Blog here:</label>
-        <input class='newpostbody' type='text' name='body' value={{body}}></p>
+        <p><label class="label1">Enter your Blog here:</label></p>
+        <textarea class='newpostbody' rows=130, maxlength="260" type='text' name='body'>{{body}}</textarea>
        
-
-        <input style= "color: navy;"" type='submit' value='Add Entry'/>
+        </br>
+        <input class='submit1'  type='submit' value='Add Entry'/>
 
     </form>
 {% endblock %}

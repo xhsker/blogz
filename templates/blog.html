@@ -4,16 +4,21 @@
 {% block content %}
   
     <h1 class="help">Build Your Blog</h1>
+
+</hr>
    
+        {% if posts|length ==0 %}
+
+        <p>There are no Blog post!</p>
     <hr/>
-    {% if blogs %}
-        {% for blog in blogs %}
+
+        {% else %}
+            {% for blog in blogs %}
+    
+                <p><a href="/blog?id={{blog.id}}" class="newposttitle">{{blog.title}}</a></p>    
+                </hr>  
+                <p class="newpostbody">{{ blog.body }}</p>
         
-            <p><a href="/blog?id={{blog.id}}" class="newposttitle">{{blog.title}}</a></p>    
-            </hr>  
-            <p class="newpostbody">{{ blog.body }}</p>
-        
-    <hr />
         {% endfor %}
 
     {% endif %}
