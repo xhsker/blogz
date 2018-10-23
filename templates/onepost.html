@@ -1,10 +1,17 @@
-
 {% extends "base.html" %}
 
 {% block content %}
+<h1 class='dog'>New Blog Entry</h1>
 
-    <h2 class='newposttitle'>{{ title }}</h2>
-</hr>
-    <p class='newpostbody'>{{ body }}</p>
+    {% for blog in blogs %}
+
+        <h2 class='newposttitle'>{{ blog.title }}</h2>
+        </hr>
+        <p class='newpostbody'>{{ blog.body }}</p>
+    </hr>
+    <p class='help'>Written by: 
+        <a href="/blog?user=blog.owner.email}}">{{blog.owner.email}}</a>
+    </p>
+    {% endfor %}
                 
 {% endblock %}

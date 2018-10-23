@@ -2,18 +2,19 @@
 
 {% block content %}
 
+
 <h1 class='dog'>Login</h1>
 
-<p class='dog'>If you don't have an account, you may<a href="/register">register</a> here!</span></p>
+<p class='help'>If you don't have an account, you may<a href="/register"> register </a> here!</span></p>
 
 <form action="/login" method='POST'>
 
-    <label class='help'>Email</label>
+    <label class='help'for='email'>Email</label>
     <input  type='text' name='email' value='{{email}}'/>
     <span class="error"></span>
 </br>
-    <label class='help'>Password</label>
-    <input  type='text' name='Password'/>
+    <label class='help' for='password'>Password</label>
+    <input  type='password' name='password'/>
     <span class='error'></span>
 </br>
 </br>

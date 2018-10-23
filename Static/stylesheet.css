@@ -1,28 +1,36 @@
 
-
+#back{
+    background-color: lightsteelblue;
+}
 
 .horse {
     margin-left: auto;
     margin-right: auto;
     width: 900px;
-    height: 8px;
+    height: 300px;
     padding: 10px;
     border: 3px solid blue;
 text-align: center;
 }
  
 .dog {
-    color: greenyellow;
+    color: fuchsia;
     font-family: Cambria;
     font-style: italic;
-    font-size: 18px;
+    font-size: 50px;
+    
 }
 
 .help{
     color: darkblue;
     font-family: Cambria;
     font-style: italic;
-    font-size: 18px;
+    font-size: 25px;
+
+}
+
+.tableness{
+    border-spacing:20px;
 }
 
 .error{
@@ -30,6 +38,7 @@ text-align: center;
     font-style: italic;
     font-family: Arial;
     font-size: 25px;
+    margin: 80px;
 }
 
 
@@ -44,7 +53,7 @@ text-align: center;
     color: navy;
     font-style: normal;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .label1{

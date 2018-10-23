@@ -2,22 +2,22 @@
 
 {% block content %}
 
-<h1><a href="/register">Register Your Account</a></h1>
+<h1 class='dog'>Register Your Account</h1>
 
 <form action="/register" method='POST'>
-    <label>Email</label>
+    <label class='help'>Email</label>
     <input type=text name=email value="{{email}}"/>
 </br>
 </br>
-    <label>Password</label>
+    <label class='help'>Password</label>
     <input type="password" name='password'/>
 </br>
 </br>
-    <label>Verify Password</label>
+    <label class='help'>Verify Password</label>
     <input type='password' name='verify_password'>
 </br>
 </br>
-    <input type="submit" value='Register'/>
+    <input class='help' type="submit" value='Register'/>
 
 </form>
 

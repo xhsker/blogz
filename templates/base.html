@@ -2,9 +2,8 @@
 <html>
 
     <head>
-        
         <link rel="stylesheet" type= "text/css" href ="static/stylesheet.css"/>
-       
+        
     </head>
 
   
@@ -15,30 +14,30 @@
         <img class='horse' src="static/images/Blog-image1.jpg" alt="Blog spelled in letters"/>
     </p>
 </br>
-        <table stlye="border-spacing:20px;">
-            <tr>
-            <td></td><span><a style="color:limegreen; font-size: 18px" href="/blog"> Main Blog Page</a></span></td>
-            </tr>
-            <tr>    
-            <td></td><span><a style="color: magenta; font-size: 18px; margin-left: 50px;" href="/newpost">Add a New Blog Entry </a></span></td>
 
-            </tr>   
-    </table>
-        
-    
 
-    {% with messages = get_flashed_messages() %}
+    {% with messages = get_flashed_messages(with_categories=True) %}
     <ul>
-    {% for message in messages %}
-    <li class="error">{{message}}</li>
+    {% for category, message in messages %}
+    <li class="{{category}}">{{message}}</li>
     {% endfor %}
     </ul>
 
     {% endwith %}
 
-{% block content %}
+    <nav>
+    
+        <a class='help' href='/blog'>  Blog   </a> |
+        <a class='help' href = '/newpost'>  New Post  </a> |
+        <a class='help' href = '/login'>  Log In  </a> |
+        <a class='help' href = '/register'>  Register  </a> |
+        <a class='help' href='/logout'>  Log Out  </a>
+    </nav>
 
+
+{% block content %}
+b
 {% endblock %}
-<footer style="color: steelblue; font-size: 12px; font-style: initial;">&#169 Thomas Lake</footer>
+<footer style="color: steelblue; font-size: 12px; font-style: initial;">&#169 Designed by: Thomas Lake</footer>
 </body>
 </html>

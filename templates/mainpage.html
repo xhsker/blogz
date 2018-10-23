@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 class=dog>Blog Entries by {{author}}</h1>
+
+        {% if blogs|length == 0 %}
+
+        <p class=help>No Blogs have been entered by {{author}}</p>
+
+        {% else %}
+
+            {% for blog in blogs %}
+
+                <a class = 'help' href='./blog?id={{blog.id}}'>
+                    <h3>{{blog.title}}</h3>
+                </a>
+                <p class='help'>{{blog.body}}</p>
+                <p class = 'help'> Written by:
+                    <a href='/blog?user={{author}}'>{{author}}</a>
+                </p>
+            </hr>
+            {% endfor %}
+
+        {% endif %}
+
+{% endblock %}
+

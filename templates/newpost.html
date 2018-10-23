@@ -2,19 +2,20 @@
 
 {% block content %}
 
-    <h1 class="help">Make a New Blog Entry</h1>
+
+    <h1 class="dog">Make a New Blog Entry</h1>
     <form action="/newpost" method='POST'>
 
 
-        <p><label class='label1'>Title of your New Blog:</label>
+        <p><label class='help'>Title of your New Blog:</label>
         <input class="newposttitle" type="text" name="title" value={{title}}></p>
         
         <br>
-        <p><label class="label1">Enter your Blog here:</label></p>
-        <textarea class='newpostbody' rows=130, maxlength="260" type='text' name='body'>{{body}}</textarea>
+        <p><label class="help">Enter your Blog here:</label></p>
+        <textarea class='newpostbody' rows='10' cols='50' type='text' name='body'>{{body}}</textarea>
        
         </br>
-        <input class='submit1'  type='submit' value='Add Entry'/>
+        <input class='help'  type='submit' value='Add Entry'/>
 
     </form>
 {% endblock %}
