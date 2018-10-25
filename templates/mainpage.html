@@ -2,27 +2,30 @@
 
 {% block content %}
 
-    <h1 class=dog>Blog Entries by {{author}}</h1>
+<h1 class=dog>Blog Entries by {{posts_for}}</h1>
 
-        {% if blogs|length == 0 %}
+    {% if posts|length == 0 %}
 
-        <p class=help>No Blogs have been entered by {{author}}</p>
+    <p class='help'>No Blog Post have been entered</p>
 
-        {% else %}
+    {% else %}
 
-            {% for blog in blogs %}
+               
+        {% for post in posts %}
 
-                <a class = 'help' href='./blog?id={{blog.id}}'>
-                    <h3>{{blog.title}}</h3>
-                </a>
-                <p class='help'>{{blog.body}}</p>
-                <p class = 'help'> Written by:
-                    <a href='/blog?user={{author}}'>{{author}}</a>
-                </p>
-            </hr>
-            {% endfor %}
+            <a class = 'help' href='./blog?id={{post.id}}'>
+                <h3>{{post.title}}</h3>
+            </a>
+            <p class='help'>{{post.body}}</p>
+            <p class = 'help'> Written by:
+                <a href='/blog?user={{post.owner.id}}'>{{post.owner.email}}</a>
+            </p>
+        </hr>
 
-        {% endif %}
+        {% endfor %}
+
+
+{% endif %}
 
 {% endblock %}
 

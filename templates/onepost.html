@@ -3,15 +3,13 @@
 {% block content %}
 <h1 class='dog'>New Blog Entry</h1>
 
-    {% for blog in blogs %}
 
-        <h2 class='newposttitle'>{{ blog.title }}</h2>
+        <h2 class='newposttitle'><a href="/blog?id={{posts.id}}">{{ blog_title }}</h2>
         </hr>
-        <p class='newpostbody'>{{ blog.body }}</p>
+        <p class='newpostbody'>{{ blog_body }}</p>
     </hr>
     <p class='help'>Written by: 
-        <a href="/blog?user=blog.owner.email}}">{{blog.owner.email}}</a>
+        <a href="/blog?user=posts.owner.id}}">{{posts.owner.email}}</a>
     </p>
-    {% endfor %}
-                
+
 {% endblock %}

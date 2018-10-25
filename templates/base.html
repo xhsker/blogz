@@ -6,31 +6,33 @@
         
     </head>
 
-  
+    <h1><img class='horse' src="static/images/Blog-image1.jpg" alt="Blog spelled in letters"/></h1>
     <title class="help">Build a Blog</title>
             
 <body>
-    <p>
-        <img class='horse' src="static/images/Blog-image1.jpg" alt="Blog spelled in letters"/>
-    </p>
-</br>
 
-
-    {% with messages = get_flashed_messages(with_categories=True) %}
-    <ul>
-    {% for category, message in messages %}
-    <li class="{{category}}">{{message}}</li>
-    {% endfor %}
+    <div class ="loggedin">
+        {% if 'email' in session %}
+        <p class='help'>Welcome {{  session['email']  }} </p>
+        {% endif %}
+    </div>
+    <div>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+        {% for category, message in messages %}
+        <li class="{{category}}">{{message}}</li>
+        {% endfor %}
     </ul>
+    </div>
 
     {% endwith %}
 
     <nav>
-    
-        <a class='help' href='/blog'>  Blog   </a> |
-        <a class='help' href = '/newpost'>  New Post  </a> |
-        <a class='help' href = '/login'>  Log In  </a> |
-        <a class='help' href = '/register'>  Register  </a> |
+        <a class='help' href='/'>Home</a>  |
+        <a class='help' href = '/blog'>All Posts </a>  |
+        <a class='help' href = '/newpost'>New Post</a>  ||
+        <a class='help' href = '/login'>  Log In  </a>  |
+        <a class='help' href = '/register'>  Register  </a>   |
         <a class='help' href='/logout'>  Log Out  </a>
     </nav>
 
@@ -38,6 +40,8 @@
 {% block content %}
 b
 {% endblock %}
+
+
 <footer style="color: steelblue; font-size: 12px; font-style: initial;">&#169 Designed by: Thomas Lake</footer>
 </body>
 </html>

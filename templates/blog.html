@@ -1,29 +1,28 @@
-
 {% extends "base.html" %}
+
 
 {% block content %}
    
-    <h2 class='dog'>Blog Entries</h2>
+    <h1 class=dog>Blog Entries by {{posts_for}}</h1>
 
-   
-        {% if posts|length ==0 %}
+        {% if posts|length == 0 %}
 
-        <p>There are no Blog post!</p>
-    <hr/>
-
+        <p class='help'>No Blog Posts</p>
 
         {% else %}
-            {% for blog in blogs %}
-    
-                <p><a href="./blog?id={{blog.id}}" class="newposttitle">{{blog.title}}</a></p>    
-                </hr>  
-                <p class="newpostbody">{{ blog.body }}</p>
-                <p class='help'>Written by: 
-                    <a href="./blog?user={{blog.owner.email}}">{{blog.owner.email}}</a>
+
+        {% for post in posts %}
+
+            <p class="newposttitle" <a href="./blog?id={{post.id}}">{{post.title}}</a></p>    
+            </hr>  
+            <p class="newpostbody">{{ post.body }}</p>
+            <p class = 'help'> Written by:
+                    <a href='/blog?user={{post.owner.id}}'>{{post.owner.email}}</a>
                 </p>
             </hr>
-        
         {% endfor %}
 
-    {% endif %}
+        {% endif %}
+
+    
 {% endblock %}
