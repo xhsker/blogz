@@ -28,12 +28,15 @@
     {% endwith %}
 
     <nav>
-        <a class='help' href='/'>Home</a>  |
-        <a class='help' href = '/blog'>All Posts </a>  |
-        <a class='help' href = '/newpost'>New Post</a>  ||
-        <a class='help' href = '/login'>  Log In  </a>  |
-        <a class='help' href = '/register'>  Register  </a>   |
-        <a class='help' href='/logout'>  Log Out  </a>
+        <a class='help' href='/'><button>Home</button></a>  
+        <a class='help' href = '/blog'><button>All Blogz</button></a>
+        {% if not session %}
+        <a class='help' href = '/login'><button>Log In</button></a>
+        {% endif %}
+        {% if session %} 
+        <a class='help' href = '/newpost'><button>New Bloz Post</button></a>
+        <a class='help' href='/logout'><button>Log Out</button></a>
+        {% endif %}
     </nav>
 
 

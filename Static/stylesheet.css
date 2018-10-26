@@ -37,8 +37,14 @@ text-align: center;
     color: red;
     font-style: italic;
     font-family: Arial;
-    font-size: 25px;
-    margin: 80px;
+    font-size: 22px;
+}
+
+.information{
+    color: blue;
+    font-style: oblique;
+    font-family: Arial;
+    font-size: 22px;
 }
 
 

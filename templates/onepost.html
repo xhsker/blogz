@@ -4,12 +4,13 @@
 <h1 class='dog'>New Blog Entry</h1>
 
 
-        <h2 class='newposttitle'><a href="/blog?id={{posts.id}}">{{ blog_title }}</h2>
+        <h2 class='newposttitle'>{{ blog_title }}</h2>
+        <p class='help'>Written on {{blog.date_written}}</p>
         </hr>
-        <p class='newpostbody'>{{ blog_body }}</p>
+        <p class='newpostbody'>{{blog.body}}</p>
     </hr>
     <p class='help'>Written by: 
-        <a href="/blog?user=posts.owner.id}}">{{posts.owner.email}}</a>
+        <a href="/singleuser?id{{blog.user_id}}">{{blog.user}}</a>
     </p>
 
 {% endblock %}

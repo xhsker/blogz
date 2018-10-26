@@ -3,21 +3,22 @@
 
 {% block content %}
    
-    <h1 class=dog>Blog Entries by {{posts_for}}</h1>
+    <h1 class=dog>All Blogz Entries</h1>
 
-        {% if posts|length == 0 %}
+        {% if blogs|length == 0 %}
 
-        <p class='help'>No Blog Posts</p>
+        <p class='help'>No Blog Posts<a href='/newpost'>Make one now!</a></p>
 
         {% else %}
 
-        {% for post in posts %}
+        {% for blog in blogs %}
 
-            <p class="newposttitle" <a href="./blog?id={{post.id}}">{{post.title}}</a></p>    
+            <p class="newposttitle" <a href="./blog?id={{blog.id}}">{{blog.title}}</a></p>
+            <p class='help'>Written on {{blog.date_written}}</p>    
             </hr>  
             <p class="newpostbody">{{ post.body }}</p>
             <p class = 'help'> Written by:
-                    <a href='/blog?user={{post.owner.id}}'>{{post.owner.email}}</a>
+                    <a href='/singleuser?id={{blog.user_id}}'>{{blog.user}}</a>
                 </p>
             </hr>
         {% endfor %}
