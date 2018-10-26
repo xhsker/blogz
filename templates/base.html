@@ -6,14 +6,14 @@
         
     </head>
 
-    <h1><img class='horse' src="static/images/Blog-image1.jpg" alt="Blog spelled in letters"/></h1>
+    <h1><img class='horse' src="static/images/Blog.jpg" alt="Blog spelled in letters"/></h1>
     <title class="help">Build a Blog</title>
             
 <body>
 
     <div class ="loggedin">
-        {% if 'email' in session %}
-        <p class='help'>Welcome {{  session['email']  }} </p>
+        {% if 'name' in session %}
+        <p class='nauth'>Welcome {{session['name']}} you are logged in! </p>
         {% endif %}
     </div>
     <div>
@@ -28,14 +28,14 @@
     {% endwith %}
 
     <nav>
-        <a class='help' href='/'><button>Home</button></a>  
-        <a class='help' href = '/blog'><button>All Blogz</button></a>
+        <a href='/'><button class='help'>Home</button></a>  
+        <a href = '/blog'><button class='help'>All Blogz</button></a>
         {% if not session %}
-        <a class='help' href = '/login'><button>Log In</button></a>
+        <a href = '/login'><button class='help'>Log In</button></a>
         {% endif %}
         {% if session %} 
-        <a class='help' href = '/newpost'><button>New Bloz Post</button></a>
-        <a class='help' href='/logout'><button>Log Out</button></a>
+        <a href = '/newpost'><button class='help'>New Blogz Post</button></a>
+        <a href='/logout'><button class='help'>Log Out</button></a>
         {% endif %}
     </nav>
 

@@ -7,21 +7,25 @@
 
         {% if blogs|length == 0 %}
 
-        <p class='help'>No Blog Posts<a href='/newpost'>Make one now!</a></p>
+        <p class='help'>No Blog Posts <a href='/newpost'> Make one now!</a></p>
 
         {% else %}
 
-        {% for blog in blogs %}
-
-            <p class="newposttitle" <a href="./blog?id={{blog.id}}">{{blog.title}}</a></p>
-            <p class='help'>Written on {{blog.date_written}}</p>    
-            </hr>  
-            <p class="newpostbody">{{ post.body }}</p>
-            <p class = 'help'> Written by:
-                    <a href='/singleuser?id={{blog.user_id}}'>{{blog.user}}</a>
+            {% for blog in blogs %}
+            <table rules='rows'>
+                <tr>
+                <th class="newposttitle" <a href="./onepost?id={{blog.id}}">{{blog.title}}</a></th>
+                </tr>
+                <tr>
+                <td class='date'>Written on {{blog.date_written}}</td>    
+                </tr>
+            </table>
+                <p class="newpostbody">{{ blog.body }}</p>
+                <p class='nauth'> Written by:
+                        <a href='/singleuser?id={{blog.user_id}}'>{{blog.user}}</a>
                 </p>
-            </hr>
-        {% endfor %}
+                </hr>
+            {% endfor %}
 
         {% endif %}
 

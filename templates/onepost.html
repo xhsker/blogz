@@ -5,12 +5,10 @@
 
 
         <h2 class='newposttitle'>{{ blog_title }}</h2>
-        <p class='help'>Written on {{blog.date_written}}</p>
+        <p class='date'>Written on {{blog.date_written}}</p>
         </hr>
         <p class='newpostbody'>{{blog.body}}</p>
     </hr>
-    <p class='help'>Written by: 
-        <a href="/singleuser?id{{blog.user_id}}">{{blog.user}}</a>
-    </p>
+    <p class='nauth'>Written by: {{blog.user}}</p>
 
 {% endblock %}

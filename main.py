@@ -51,7 +51,7 @@ def allowed_login():
     allowed_login = ['login', 'index', 'blog', 'register', 'static']
 
     if request.endpoint not in allowed_login and not session:
-        flash ('Must login in!')
+        flash ('Must login in!', 'error')
         return redirect('/login')
 
 
